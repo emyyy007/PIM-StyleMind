@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleMind — Criar conta</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- PAINEL ESQUERDO (desktop) -->
+        <div class="panel-left" aria-hidden="true">
+            <div class="panel-overlay"></div>
+            <div class="panel-content">
+                <div class="panel-logo">Style<span>Mind</span></div>
+                <div class="panel-tagline">Seu estilo,<br><em>suas regras.</em></div>
+                <div class="panel-sub">Crie sua conta e descubra uma experiência de moda feita só para você.</div>
+                <div class="panel-steps">
+                    <div class="pstep active">
+                        <div class="pstep-num">1</div>
+                        <div class="pstep-text">Seus dados</div>
+                    </div>
+                    <div class="pstep-line"></div>
+                    <div class="pstep" id="pstep2">
+                        <div class="pstep-num">2</div>
+                        <div class="pstep-text">Seu estilo</div>
+                    </div>
+                    <div class="pstep-line"></div>
+                    <div class="pstep" id="pstep3">
+                        <div class="pstep-num">3</div>
+                        <div class="pstep-text">Pronto!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAINEL DIREITO -->
+        <div class="panel-right">
+
+            <div class="mobile-logo">Style<span>Mind</span></div>
+
+            <div class="form-box">
+
+                <!-- ── SEÇÃO 1: DADOS ── -->
+                <section class="form-section" id="secao-dados">
+                    <div class="section-badge">Passo 1 de 2</div>
+                    <h1 class="form-title">Criar conta</h1>
+                    <p class="form-sub">Preencha seus dados para começar</p>
+
+                    <form class="form" id="formDados" novalidate>
+
+                        <div class="fields-row">
+                            <div class="field-group">
+                                <label class="field-label" for="nome">Nome</label>
+                                <div class="field-wrap">
+                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                    <input class="field-input" type="text" id="nome" placeholder="Seu nome" required
+                                        autocomplete="given-name">
+                                </div>
+                            </div>
+                            <div class="field-group">
+                                <label class="field-label" for="sobrenome">Sobrenome</label>
+                                <div class="field-wrap">
+                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                    <input class="field-input" type="text" id="sobrenome" placeholder="Seu sobrenome"
+                                        required autocomplete="family-name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label" for="email">E-mail</label>
+                            <div class="field-wrap">
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                                <input class="field-input" type="email" id="email" placeholder="seu@email.com" required
+                                    autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label" for="senha">Senha</label>
+                            <div class="field-wrap">
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                <input class="field-input" type="password" id="senha" placeholder="Mínimo 8 caracteres"
+                                    required autocomplete="new-password">
+                                <button type="button" class="toggle-pw" aria-label="Mostrar senha">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <div class="strength-label" id="strengthLabel"></div>
+                        </div>
+
+                        <div class="field-group">
+                            <label class="field-label" for="confirma">Confirmar senha</label>
+                            <div class="field-wrap">
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                                <input class="field-input" type="password" id="confirma" placeholder="Repita a senha"
+                                    required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="termos" required>
+                            <span class="checkbox-custom"></span>
+                            Concordo com os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>
+                        </label>
+
+                        <button type="submit" class="btn-primary">
+                            Continuar para o quiz
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+
+                    </form>
+
+                    <p class="login-link">Já tem conta? <a href="login.html">Entrar</a></p>
+                </section>
+
+                <!-- ── SEÇÃO 2: QUIZ ── -->
+                <section class="form-section hidden" id="secao-quiz">
+                    <div class="section-badge">Passo 2 de 2</div>
+                    <h2 class="form-title">Qual é o seu estilo?</h2>
+                    <p class="form-sub">Escolha quantos quiser — vamos personalizar sua experiência</p>
+
+                    <div class="quiz">
+
+                        <!-- Q1: Estilo -->
+                        <div class="quiz-block">
+                            <div class="quiz-question">✦ Como você costuma se vestir?</div>
+                            <div class="quiz-options">
+                                <button class="qopt" data-group="estilo" data-val="casual">
+                                    <span class="qopt-emoji">👕</span>
+                                    <span class="qopt-label">Casual</span>
+                                </button>
+                                <button class="qopt" data-group="estilo" data-val="elegante">
+                                    <span class="qopt-emoji">👗</span>
+                                    <span class="qopt-label">Elegante</span>
+                                </button>
+                                <button class="qopt" data-group="estilo" data-val="streetwear">
+                                    <span class="qopt-emoji">🧢</span>
+                                    <span class="qopt-label">Streetwear</span>
+                                </button>
+                                <button class="qopt" data-group="estilo" data-val="minimalista">
+                                    <span class="qopt-emoji">🤍</span>
+                                    <span class="qopt-label">Minimalista</span>
+                                </button>
+                                <button class="qopt" data-group="estilo" data-val="boho">
+                                    <span class="qopt-emoji">🌿</span>
+                                    <span class="qopt-label">Boho</span>
+                                </button>
+                                <button class="qopt" data-group="estilo" data-val="esportivo">
+                                    <span class="qopt-emoji">🏃‍♀️</span>
+                                    <span class="qopt-label">Esportivo</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Q2: Peças favoritas -->
+                        <div class="quiz-block">
+                            <div class="quiz-question">✦ Quais peças você mais usa?</div>
+                            <div class="quiz-options">
+                                <button class="qopt" data-group="pecas" data-val="vestidos">
+                                    <span class="qopt-emoji">👗</span>
+                                    <span class="qopt-label">Vestidos</span>
+                                </button>
+                                <button class="qopt" data-group="pecas" data-val="calcas">
+                                    <span class="qopt-emoji">👖</span>
+                                    <span class="qopt-label">Calças</span>
+                                </button>
+                                <button class="qopt" data-group="pecas" data-val="blusas">
+                                    <span class="qopt-emoji">👚</span>
+                                    <span class="qopt-label">Blusas</span>
+                                </button>
+                                <button class="qopt" data-group="pecas" data-val="biquinis">
+                                    <span class="qopt-emoji">👙</span>
+                                    <span class="qopt-label">Biquinis</span>
+                                </button>
+                                <button class="qopt" data-group="pecas" data-val="jaquetas">
+                                    <span class="qopt-emoji">🧥</span>
+                                    <span class="qopt-label">Jaquetas</span>
+                                </button>
+                                <button class="qopt" data-group="pecas" data-val="acessorios">
+                                    <span class="qopt-emoji">👜</span>
+                                    <span class="qopt-label">Acessórios</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Q3: Orçamento -->
+                        <div class="quiz-block">
+                            <div class="quiz-question">✦ Qual sua faixa de preço preferida?</div>
+                            <div class="quiz-options quiz-options--col">
+                                <button class="qopt qopt--wide" data-group="preco" data-val="ate100">
+                                    <span class="qopt-emoji">💛</span>
+                                    <span class="qopt-label">Até R$ 100</span>
+                                </button>
+                                <button class="qopt qopt--wide" data-group="preco" data-val="100a300">
+                                    <span class="qopt-emoji">💙</span>
+                                    <span class="qopt-label">R$ 100 a R$ 300</span>
+                                </button>
+                                <button class="qopt qopt--wide" data-group="preco" data-val="acima300">
+                                    <span class="qopt-emoji">💜</span>
+                                    <span class="qopt-label">Acima de R$ 300</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Q4: Ocasião -->
+                        <div class="quiz-block">
+                            <div class="quiz-question">✦ Para quais ocasiões você mais compra?</div>
+                            <div class="quiz-options">
+                                <button class="qopt" data-group="ocasiao" data-val="trabalho">
+                                    <span class="qopt-emoji">💼</span>
+                                    <span class="qopt-label">Trabalho</span>
+                                </button>
+                                <button class="qopt" data-group="ocasiao" data-val="dia-a-dia">
+                                    <span class="qopt-emoji">☀️</span>
+                                    <span class="qopt-label">Dia a dia</span>
+                                </button>
+                                <button class="qopt" data-group="ocasiao" data-val="festas">
+                                    <span class="qopt-emoji">🎉</span>
+                                    <span class="qopt-label">Festas</span>
+                                </button>
+                                <button class="qopt" data-group="ocasiao" data-val="academia">
+                                    <span class="qopt-emoji">🏋️‍♀️</span>
+                                    <span class="qopt-label">Academia</span>
+                                </button>
+                                <button class="qopt" data-group="ocasiao" data-val="viagens">
+                                    <span class="qopt-emoji">✈️</span>
+                                    <span class="qopt-label">Viagens</span>
+                                </button>
+                                <button class="qopt" data-group="ocasiao" data-val="casual">
+                                    <span class="qopt-emoji">🛒</span>
+                                    <span class="qopt-label">Casual</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="btn-primary" id="btnFinalizar">
+                        Criar minha conta
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <button class="btn-skip" id="btnPular">Pular por agora</button>
+
+                </section>
+
+                <!-- ── SEÇÃO 3: SUCESSO ── -->
+                <section class="form-section hidden" id="secao-sucesso">
+                    <div class="success-icon">✓</div>
+                    <h2 class="form-title">Conta criada!</h2>
+                    <p class="form-sub">Seu perfil de estilo foi salvo. Vamos às compras?</p>
+                    <div class="tags-preview" id="tagsPreview"></div>
+                    <button class="btn-primary" id="btnHome">
+                        Ir para a home
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ── Toggle senha ──
+        document.querySelector('.toggle-pw').addEventListener('click', function () {
+            const input = document.getElementById('senha');
+            const svg = this.querySelector('svg');
+            const isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
+            svg.innerHTML = isPassword
+                ? `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`
+                : `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+        });
+
+        // ── Força da senha ──
+        document.getElementById('senha').addEventListener('input', function () {
+            const val = this.value;
+            const fill = document.getElementById('strengthFill');
+            const label = document.getElementById('strengthLabel');
+            let strength = 0;
+            if (val.length >= 8) strength++;
+            if (/[A-Z]/.test(val)) strength++;
+            if (/[0-9]/.test(val)) strength++;
+            if (/[^A-Za-z0-9]/.test(val)) strength++;
+            const levels = [
+                { w: '0%', color: 'transparent', text: '' },
+                { w: '25%', color: '#E57373', text: 'Fraca' },
+                { w: '50%', color: '#FFB74D', text: 'Média' },
+                { w: '75%', color: '#81C784', text: 'Boa' },
+                { w: '100%', color: '#4CAF50', text: 'Forte' },
+            ];
+            fill.style.width = levels[strength].w;
+            fill.style.background = levels[strength].color;
+            label.textContent = levels[strength].text;
+            label.style.color = levels[strength].color;
+        });
+
+        // ── Avança para o quiz ──
+        document.getElementById('formDados').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('secao-dados').classList.add('hidden');
+            document.getElementById('secao-quiz').classList.remove('hidden');
+            document.getElementById('pstep2').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ── Seleção das opções do quiz ──
+        document.querySelectorAll('.qopt').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const group = btn.dataset.group;
+                // preço = seleção única
+                if (group === 'preco') {
+                    document.querySelectorAll(`[data-group="preco"]`).forEach(b => b.classList.remove('selected'));
+                }
+                btn.classList.toggle('selected');
+            });
+        });
+
+        // ── Finalizar ──
+        function finalizar() {
+            const selecionados = [...document.querySelectorAll('.qopt.selected')].map(b => b.dataset.val);
+            document.getElementById('secao-quiz').classList.add('hidden');
+            document.getElementById('secao-sucesso').classList.remove('hidden');
+            document.getElementById('pstep3').classList.add('active');
+
+            const preview = document.getElementById('tagsPreview');
+            preview.innerHTML = selecionados.length
+                ? selecionados.map(v => `<span class="preview-tag">${v}</span>`).join('')
+                : '<span class="preview-tag">✦ Perfil geral</span>';
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('btnFinalizar').addEventListener('click', finalizar);
+        document.getElementById('btnPular').addEventListener('click', finalizar);
+
+        // ── Ir para home ──
+        document.getElementById('btnHome').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        // ── Checkbox visual ──
+        document.querySelectorAll('.checkbox-label input').forEach(cb => {
+            cb.addEventListener('change', function () {
+                const custom = this.nextElementSibling;
+                custom.classList.toggle('checked', this.checked);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

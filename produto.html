@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleMind — Vestido Midi Floral</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="produto.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <button class="btn-back" onclick="history.back()" aria-label="Voltar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M19 12H5M12 5l-7 7 7 7" />
+                </svg>
+            </button>
+            <a href="index.html" class="logo">Style<span>Mind</span></a>
+            <div class="header-icons">
+                <button class="icon-btn" aria-label="Buscar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Carrinho" onclick="window.location.href='carrinho.html'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-badge" id="cartBadge" style="display:none"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="product-layout">
+
+            <!-- GALERIA -->
+            <div class="gallery">
+                <div class="gallery-main" id="galleryMain">
+                    <img src="images/vestido_flora_midi_romance_manga_curta_decotado_branco_azul.jpg"
+                        alt="Vestido midi floral — vista frontal" id="mainImg">
+                    <button class="fav-btn" id="favBtn" aria-label="Favoritar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </button>
+                    <div class="gallery-badge">-21% OFF</div>
+                </div>
+                <div class="gallery-thumbs" id="galleryThumbs">
+                    <button class="thumb active"
+                        data-src="images/vestido_flora_midi_romance_manga_curta_decotado_branco_azul.jpg"
+                        aria-label="Foto 1">
+                        <img src="images/vestido_flora_midi_romance_manga_curta_decotado_branco_azul.jpg" alt="Thumb 1">
+                    </button>
+                    <button class="thumb"
+                        data-src="images/linho-off-site-2-a8345eb43cddc8298b17344592121107-1024-1024.jpeg"
+                        aria-label="Foto 2">
+                        <img src="images/linho-off-site-2-a8345eb43cddc8298b17344592121107-1024-1024.jpeg"
+                            alt="Thumb 2">
+                    </button>
+                    <button class="thumb" data-src="images/wide-leg-verde.jpeg" aria-label="Foto 3">
+                        <img src="images/wide-leg-verde.jpeg" alt="Thumb 3">
+                    </button>
+                    <button class="thumb" data-src="images/jaqueta-lilas.jpeg" aria-label="Foto 4">
+                        <img src="images/jaqueta-lilas.jpeg" alt="Thumb 4">
+                    </button>
+                </div>
+            </div>
+
+            <!-- INFO DO PRODUTO -->
+            <div class="product-info">
+
+                <div class="product-cat">Vestidos · Casual</div>
+                <h1 class="product-name">Vestido Midi Floral Romance</h1>
+
+                <div class="rating-row">
+                    <div class="stars">★★★★★</div>
+                    <span class="rating-num">4.8</span>
+                    <span class="rating-count">(127 avaliações)</span>
+                </div>
+
+                <div class="price-row">
+                    <span class="price-current">R$ 189,90</span>
+                    <span class="price-old">R$ 239,90</span>
+                    <span class="price-badge">-21%</span>
+                </div>
+
+                <div class="installments">
+                    ou <strong>3x de R$ 63,30</strong> sem juros
+                </div>
+
+                <!-- CORES -->
+                <div class="option-group">
+                    <div class="option-label">Cor: <strong id="colorLabel">Branco floral</strong></div>
+                    <div class="color-options">
+                        <button class="color-swatch active" data-color="Branco floral"
+                            style="background: #F5F0E8; border: 2px solid #993556;" aria-label="Branco floral"></button>
+                        <button class="color-swatch" data-color="Rosa nude" style="background: #F4C0D1;"
+                            aria-label="Rosa nude"></button>
+                        <button class="color-swatch" data-color="Azul claro" style="background: #C0D4F4;"
+                            aria-label="Azul claro"></button>
+                        <button class="color-swatch" data-color="Verde sage" style="background: #9FD4B8;"
+                            aria-label="Verde sage"></button>
+                    </div>
+                </div>
+
+                <!-- TAMANHOS -->
+                <div class="option-group">
+                    <div class="option-label">Tamanho: <strong id="sizeLabel">—</strong></div>
+                    <div class="size-options">
+                        <button class="size-btn" data-size="PP">PP</button>
+                        <button class="size-btn" data-size="P">P</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="G">G</button>
+                        <button class="size-btn size-btn--esgotado" data-size="GG" disabled>GG</button>
+                    </div>
+                    <button class="guia-link">Ver guia de tamanhos</button>
+                </div>
+
+                <!-- QUANTIDADE -->
+                <div class="option-group">
+                    <div class="option-label">Quantidade</div>
+                    <div class="qty-row">
+                        <button class="qty-btn" id="qtyMinus" aria-label="Diminuir">−</button>
+                        <span class="qty-num" id="qtyNum">1</span>
+                        <button class="qty-btn" id="qtyPlus" aria-label="Aumentar">+</button>
+                        <span class="qty-stock">Apenas 8 em estoque</span>
+                    </div>
+                </div>
+
+                <!-- CTAs -->
+                <div class="cta-group">
+                    <button class="btn-primary" id="btnCarrinho">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                        Adicionar ao carrinho
+                    </button>
+                    <button class="btn-secondary" onclick="window.location.href='carrinho.html'">
+                        Comprar agora
+                    </button>
+                </div>
+
+                <!-- BENEFÍCIOS -->
+                <div class="benefits">
+                    <div class="benefit">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                        Frete grátis acima de R$ 199
+                    </div>
+                    <div class="benefit">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10" />
+                            <polyline points="1 20 1 14 7 14" />
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                        </svg>
+                        Troca grátis em até 30 dias
+                    </div>
+                    <div class="benefit">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        Pagamento 100% seguro
+                    </div>
+                </div>
+
+                <!-- DESCRIÇÃO -->
+                <div class="accordion">
+                    <button class="accordion-btn" id="accDesc">
+                        Descrição do produto
+                        <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="accordion-body open" id="bodyDesc">
+                        <p>Vestido midi com estampa floral delicada, perfeito para ocasiões casuais e passeios.
+                            Confeccionado em tecido leve e fluido, ideal para o verão.</p>
+                        <ul>
+                            <li>Comprimento midi (abaixo do joelho)</li>
+                            <li>Decote V suave</li>
+                            <li>Manga curta</li>
+                            <li>Composição: 95% viscose, 5% elastano</li>
+                            <li>Lavar à mão ou em ciclo delicado</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <button class="accordion-btn" id="accEntrega">
+                        Entrega e prazo
+                        <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="accordion-body" id="bodyEntrega">
+                        <p>Entrega expressa: <strong>2 a 4 dias úteis</strong></p>
+                        <p>Entrega padrão: <strong>5 a 10 dias úteis</strong></p>
+                        <p style="margin-top:8px;">Frete grátis para compras acima de R$ 199,00.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RECOMENDADOS -->
+        <section class="related">
+            <div class="related-header">
+                <h2 class="related-title">Quem viu isso também gostou</h2>
+                <div class="rec-badge-small">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                    </svg>
+                    Recomendado para você
+                </div>
+            </div>
+            <div class="related-scroll">
+
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(160deg,#F5ECD8,#E8D5B7);">
+                        <img src="images/linho-off-site-2-a8345eb43cddc8298b17344592121107-1024-1024.jpeg"
+                            alt="Blusa linho">
+                        <button class="product-fav" aria-label="Favoritar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info-card">
+                        <div class="product-cat-card">Blusas</div>
+                        <div class="product-name-card">Blusa linho off-white</div>
+                        <div class="product-price-card">R$ 129,90</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(160deg,#E1F5EE,#9FE1CB);">
+                        <img src="images/wide-leg-verde.jpeg" alt="Calça wide leg">
+                        <button class="product-fav" aria-label="Favoritar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info-card">
+                        <div class="product-cat-card">Calças</div>
+                        <div class="product-name-card">Calça wide leg verde</div>
+                        <div><span class="product-price-card">R$ 219,90</span> <span class="product-old-card">R$
+                                279,90</span></div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(160deg,#EEEDFE,#CECBF6);">
+                        <img src="images/jaqueta-lilas.jpeg" alt="Jaqueta lilás">
+                        <button class="product-fav" aria-label="Favoritar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info-card">
+                        <div class="product-cat-card">Jaquetas</div>
+                        <div class="product-name-card">Jaqueta lilás oversized</div>
+                        <div class="product-price-card">R$ 349,90</div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(160deg,#FBEAF0,#F4C0D1);">
+                        <img src="images/bolsa-trancada.jpeg" alt="Bolsa palha">
+                        <button class="product-fav" aria-label="Favoritar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info-card">
+                        <div class="product-cat-card">Acessórios</div>
+                        <div class="product-name-card">Bolsa palha trançada</div>
+                        <div class="product-price-card">R$ 159,90</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- NAV BAR MOBILE -->
+    <nav aria-label="Navegação principal">
+        <button class="nav-item" onclick="window.location.href='index.html'" aria-label="Home">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            Home
+        </button>
+        <button class="nav-item" aria-label="Buscar">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+            </svg>
+            Buscar
+        </button>
+        <button class="nav-item" aria-label="Salvos">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            Salvos
+        </button>
+        <button class="nav-item active" aria-label="Carrinho" onclick="window.location.href='carrinho.html'">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            Carrinho
+        </button>
+        <button class="nav-item" aria-label="Perfil">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+            </svg>
+            Perfil
+        </button>
+    </nav>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">✓ Adicionado ao carrinho!</div>
+
+    <script>
+        // Galeria
+        document.querySelectorAll('.thumb').forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                document.getElementById('mainImg').src = thumb.dataset.src;
+            });
+        });
+
+        // Favoritar
+        const favBtn = document.getElementById('favBtn');
+        favBtn.addEventListener('click', () => {
+            const svg = favBtn.querySelector('svg');
+            const filled = svg.getAttribute('fill') === '#993556';
+            svg.setAttribute('fill', filled ? 'none' : '#993556');
+        });
+
+        // Cores
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', () => {
+                document.querySelectorAll('.color-swatch').forEach(s => s.style.border = '2px solid transparent');
+                swatch.style.border = '2px solid #993556';
+                document.getElementById('colorLabel').textContent = swatch.dataset.color;
+            });
+        });
+
+        // Tamanhos
+        document.querySelectorAll('.size-btn:not([disabled])').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('sizeLabel').textContent = btn.dataset.size;
+            });
+        });
+
+        // Quantidade
+        let qty = 1;
+        document.getElementById('qtyPlus').addEventListener('click', () => {
+            if (qty < 8) { qty++; document.getElementById('qtyNum').textContent = qty; }
+        });
+        document.getElementById('qtyMinus').addEventListener('click', () => {
+            if (qty > 1) { qty--; document.getElementById('qtyNum').textContent = qty; }
+        });
+
+        // Adicionar ao carrinho
+        document.getElementById('btnCarrinho').addEventListener('click', () => {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            document.getElementById('cartBadge').style.display = 'block';
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        });
+
+        // Accordion
+        function setupAccordion(btnId, bodyId) {
+            document.getElementById(btnId).addEventListener('click', () => {
+                const body = document.getElementById(bodyId);
+                const btn = document.getElementById(btnId);
+                body.classList.toggle('open');
+                btn.classList.toggle('open');
+            });
+        }
+        setupAccordion('accDesc', 'bodyDesc');
+        setupAccordion('accEntrega', 'bodyEntrega');
+
+        // Fav nos relacionados
+        document.querySelectorAll('.product-fav').forEach(btn => {
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                const svg = btn.querySelector('svg');
+                const filled = svg.getAttribute('fill') === '#993556';
+                svg.setAttribute('fill', filled ? 'none' : '#993556');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

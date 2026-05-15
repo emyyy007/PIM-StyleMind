@@ -1,0 +1,466 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --rose-dark: #993556;
+    --rose-mid: #C084A8;
+    --rose-light: #FBEAF0;
+    --rose-pale: #F4C0D1;
+    --charcoal: #2C2C2A;
+    --charcoal-mid: #5F5E5A;
+    --offwhite: #F8F5F2;
+    --white: #FFFFFF;
+    --border: rgba(44, 44, 42, 0.12);
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--offwhite);
+    color: var(--charcoal);
+    min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────
+   LAYOUT GERAL
+───────────────────────────────────────── */
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────
+   PAINEL ESQUERDO (desktop)
+───────────────────────────────────────── */
+.panel-left {
+    display: none;
+    /* escondido no mobile */
+    position: relative;
+    flex: 1;
+    background: linear-gradient(145deg, #2C2C2A 0%, #5F3147 60%, #993556 100%);
+    overflow: hidden;
+}
+
+.panel-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(153, 53, 86, 0.5) 0%, transparent 55%),
+        radial-gradient(circle at 85% 15%, rgba(192, 132, 168, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 60% 85%, rgba(244, 192, 209, 0.2) 0%, transparent 40%);
+}
+
+.panel-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 48px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+
+.panel-logo {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.panel-logo span {
+    color: var(--rose-pale);
+    font-style: italic;
+}
+
+.panel-tagline {
+    font-family: var(--font-display);
+    font-size: 48px;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.panel-tagline em {
+    color: var(--rose-pale);
+}
+
+.panel-sub {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    max-width: 340px;
+}
+
+.panel-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.pbadge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 50px;
+    width: fit-content;
+    backdrop-filter: blur(4px);
+}
+
+/* ─────────────────────────────────────────
+   PAINEL DIREITO — formulário
+───────────────────────────────────────── */
+.panel-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    min-height: 100vh;
+}
+
+.mobile-logo {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+}
+
+.mobile-logo span {
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ─────────────────────────────────────────
+   CABEÇALHO DO FORM
+───────────────────────────────────────── */
+.form-header {
+    margin-bottom: 4px;
+}
+
+.form-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.form-sub {
+    font-size: 14px;
+    color: var(--charcoal-mid);
+    line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────
+   SOCIAL LOGIN
+───────────────────────────────────────── */
+.social-row {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border-radius: 12px;
+    border: 0.5px solid var(--border);
+    background: var(--white);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--charcoal);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.social-btn:hover {
+    border-color: var(--rose-mid);
+    background: var(--rose-light);
+}
+
+/* ─────────────────────────────────────────
+   DIVIDER
+───────────────────────────────────────── */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--charcoal-mid);
+    font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--border);
+}
+
+/* ─────────────────────────────────────────
+   FORM FIELDS
+───────────────────────────────────────── */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--charcoal);
+}
+
+.label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forgot-link {
+    font-size: 12px;
+    color: var(--rose-dark);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.field-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.field-icon {
+    position: absolute;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    color: var(--charcoal-mid);
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.field-input {
+    width: 100%;
+    padding: 12px 44px 12px 40px;
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.field-input::placeholder {
+    color: rgba(95, 94, 90, 0.5);
+}
+
+.field-input:focus {
+    border-color: var(--rose-mid);
+    box-shadow: 0 0 0 3px rgba(192, 132, 168, 0.15);
+}
+
+.toggle-pw {
+    position: absolute;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--charcoal-mid);
+    border-radius: 6px;
+    transition: color 0.2s;
+}
+
+.toggle-pw:hover {
+    color: var(--rose-dark);
+}
+
+.toggle-pw svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ─────────────────────────────────────────
+   CHECKBOX
+───────────────────────────────────────── */
+.remember-row {
+    margin-top: -4px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--charcoal-mid);
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 0.5px solid var(--border);
+    border-radius: 5px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.checkbox-label input:checked+.checkbox-custom {
+    background: var(--rose-dark);
+    border-color: var(--rose-dark);
+}
+
+.checkbox-label input:checked+.checkbox-custom::after {
+    content: '';
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+    display: block;
+}
+
+/* ─────────────────────────────────────────
+   BOTÃO PRINCIPAL
+───────────────────────────────────────── */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: var(--rose-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 4px;
+    box-shadow: 0 4px 14px rgba(153, 53, 86, 0.35);
+}
+
+.btn-primary:hover {
+    background: #7d2a47;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(153, 53, 86, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ─────────────────────────────────────────
+   LINK CADASTRO
+───────────────────────────────────────── */
+.signup-link {
+    text-align: center;
+    font-size: 13px;
+    color: var(--charcoal-mid);
+}
+
+.signup-link a {
+    color: var(--rose-dark);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   DESKTOP (768px+)
+───────────────────────────────────────── */
+@media (min-width: 768px) {
+    .panel-left {
+        display: flex;
+    }
+
+    .panel-right {
+        width: 480px;
+        flex-shrink: 0;
+        padding: 60px 48px;
+    }
+
+    .mobile-logo {
+        display: none;
+    }
+
+    .form-title {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .panel-right {
+        width: 520px;
+        padding: 80px 64px;
+    }
+
+    .panel-tagline {
+        font-size: 56px;
+    }
+}
